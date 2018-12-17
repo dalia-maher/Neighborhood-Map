@@ -19,3 +19,7 @@ git clone https://github.com/dalia-maher/Neighborhood-Map
 2. Open the file "index.html" (Right click -> open or by double clicking on the file)
 3. The website will be opened in your default browser
 
+## Project Functionalities
+
+1. You can find a list of markers rendered on the map showing different neighborhood locations
+2. Clicking on any of the markers should open an info window about the selected location
