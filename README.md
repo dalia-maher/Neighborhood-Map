@@ -23,3 +23,4 @@ git clone https://github.com/dalia-maher/Neighborhood-Map
 
 1. You can find a list of markers rendered on the map showing different neighborhood locations
 2. Clicking on any of the markers should open an info window about the selected location
+3. Filtering locations by searching in a text input field that filters the map markers and list items to locations matching the text input or selection.
