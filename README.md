@@ -6,6 +6,9 @@ This webiste aims to display a neighborhood location list on a map. A list of ma
 
 1. Knockout Framework
 2. Google Maps API
+3. HTML
+4. JQuery
+5. Third-Party API
 
 ### Project Setup
 
