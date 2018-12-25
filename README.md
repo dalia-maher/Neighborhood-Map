@@ -26,6 +26,7 @@ git clone https://github.com/dalia-maher/Neighborhood-Map
 1. Open the unzipped / cloned directory of the repo in your local machine
 2. Open the file "index.html" (Right click -> open or by double clicking on the file)
 3. The website will be opened in your default browser
+4. Start Searching the map markers or click on any one on the map to view its info
 
 ### Project Functionalities
 
