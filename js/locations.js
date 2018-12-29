@@ -3,6 +3,7 @@
 var locations = [
     {
         title: 'Park Ave Penthouse',
+		info: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
         location: {
             lat: 40.7713024,
             lng: -73.9632393
@@ -10,6 +11,7 @@ var locations = [
     },
     {
         title: 'Chelsea Loft',
+		info: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
         location: {
             lat: 40.7444883,
             lng: -73.9949465
@@ -17,6 +19,7 @@ var locations = [
     },
     {
         title: 'Union Square Open Floor Plan',
+		info: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
         location: {
             lat: 40.7347062,
             lng: -73.9895759
@@ -24,6 +27,7 @@ var locations = [
     },
     {
         title: 'East Village Hip Studio',
+		info: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
         location: {
             lat: 40.7281777,
             lng: -73.984377
@@ -31,6 +35,7 @@ var locations = [
     },
     {
         title: 'TriBeCa Artsy Bachelor Pad',
+		info: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
         location: {
             lat: 40.7195264,
             lng: -74.0089934
@@ -38,6 +43,7 @@ var locations = [
     },
     {
         title: 'Chinatown Homey Space',
+		info: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
         location: {
             lat: 40.7180628,
             lng: -73.9961237
