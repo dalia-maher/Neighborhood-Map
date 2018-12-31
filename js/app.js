@@ -31,3 +31,7 @@ function initMap() {
         markers.push(new Neighborhood(locations[i]));
     }
 }
+
+function showMapsLoadingError() {
+    $('#map').html('An error occurred while loading Google Maps!');
+}
