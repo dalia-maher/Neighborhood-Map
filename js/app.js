@@ -1,6 +1,11 @@
 /* model */
 
-var neighborhood = function(data) {
+var map;
+
+// Create a new blank array for all the listing markers.
+var markers = [];
+
+var Neighborhood = function(data) {
 
     var self = this;
 
@@ -14,15 +19,15 @@ var neighborhood = function(data) {
     });
 };
 
-var map;
-
-// Create a new blank array for all the listing markers.
-var markers = [];
-
 function initMap() {
 	// Constructor creates a new map - only center and zoom are required.
 	map = new google.maps.Map(document.getElementById('map'), {
 		center: {lat: 40.7413549, lng: -73.9980244},
 		zoom: 13
 	});
+
+    // Adding markers from locations.js file to the markers array
+    for (var i = 0; i < locations.length; i++) {
+        markers.push(new Neighborhood(locations[i]));
+    }
 }
