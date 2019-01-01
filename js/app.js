@@ -101,9 +101,41 @@ function populateInfoWindow(marker, infowindow) {
 		// Use streetview service to get the closest streetview image within
 		// 50 meters of the markers position
 		streetViewService.getPanoramaByLocation(marker.position, radius, getStreetView);
-		// Open the infowindow on the correct marker.		
+
+		// Get WikipediaArticles to be populated in the info window
+		getWikiArticles(marker, infowindow);
+
+		// Open the infowindow on the correct marker.
 		infowindow.open(map, marker);
 	}
+}
+
+function getWikiArticles(marker, infowindow) {
+
+	var wikipediaUrl = "http://en.wikipedia.org/w/api.php?action=opensearch&search="
+		+ marker.title + "&format=json&callback=wikiCallback";
+	$.ajax({
+		url: wikiUrl,
+		dataType: "jsonp"
+	}).done(function(response) {
+		console.log(response);
+		var articles = response[1];
+		var articleUrls = response[3];
+		if (articles != null && articles.length > 0) {
+			var content = '<h4>Wikipedia Articles:</h4><ul>';
+			for (var i = 0; i < articles.length; i++) {
+				var articleName = articles[i];
+				var url = articleUrls[i];
+				content += '<li><a href="' + url + '">' + articleName + '</a></li>';
+			}
+			content += '</ul>';
+			$('#articles').html(content);
+		} else {
+			$('#articles').html('<div class="alert alert-warning">No articles found from Wikipedia.</div>')
+		}
+	}).fail(function(e) {
+        $('#articles').html('<div class="alert alert-danger">Failed to get articles from Wikipedia!</div>');
+	});
 }
 
 function initMap() {
