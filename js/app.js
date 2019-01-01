@@ -4,19 +4,54 @@ var map;
 
 // Create a new blank array for all the listing markers.
 var markers = [];
+var largeInfowindow;
+
+function ViewModel() {
+    this.searchText = ko.observable("");
+    var self = this;
+
+    this.locations = ko.computed(function() {
+        var result = [];
+        markers.forEach(function(marker) {
+            if (marker.title.toLowerCase()
+				.includes(self.searchText().toLowerCase())) {
+                result.push(marker);
+                marker.setVisible(true);
+            } else {
+                marker.setVisible(false);
+            }
+        });
+        return result;
+    }, this);
+}
 
 var Neighborhood = function(data) {
 
-    var self = this;
+    this.title = data.title;
+    this.location = data.location;
+	this.info = data.info;
 
-    self.name = data.name;
-    self.location = data.location;
-    self.info = data.info;
-
-    self.marker = new google.maps.Marker({
+    var marker = new google.maps.Marker({
+        position: data.location,
+        title: data.title,
+		info: data.info,
         map: map,
-        position: self.location
+        animation: google.maps.Animation.DROP
     });
+
+    this.marker = marker;
+
+    this.setVisible = function(v) {
+        this.marker.setVisible(v);
+    };
+	
+	this.marker.addListener('click', function() {
+		populateInfoWindow(this, largeInfowindow);
+	});
+
+    this.showLocationInfo = function() {
+        google.maps.event.trigger(this.marker, 'click');
+    };
 };
 
 // This function populates the infowindow when the marker is clicked. We'll only allow
@@ -24,13 +59,17 @@ var Neighborhood = function(data) {
 // on that markers position.
 function populateInfoWindow(marker, infowindow) {
 	// Check to make sure the infowindow is not already opened on this marker.
-	if (infowindow.marker == marker) {
+	if (infowindow.marker != marker) {
+		marker.setAnimation(google.maps.Animation.BOUNCE);
+		setTimeout(function(){ marker.setAnimation(null); }, 2000);
+		
 		// Clear the infowindow content to give the streetview time to load.
 		infowindow.setContent('');
 		infowindow.marker = marker;
 		// Make sure the marker property is cleared if the infowindow is closed.
 		infowindow.addListener('closeclick', function() {
 			infowindow.marker = null;
+			marker.setAnimation(null);
 		});
 		var streetViewService = new google.maps.StreetViewService();
 		var radius = 50;
@@ -42,7 +81,9 @@ function populateInfoWindow(marker, infowindow) {
 				var nearStreetViewLocation = data.location.latLng;
 				var heading = google.maps.geometry.spherical.computeHeading(
 					nearStreetViewLocation, marker.position);
-				infowindow.setContent('<div>' + marker.title + '</div><div id="pano"></div>');
+				infowindow.setContent('<div id="marker-title"><h4>' + marker.title
+					+ '</h4></div><div id="infobox"><p>' + marker.info
+					+ '</p></div><div id="pano"></div><div id="articles"></div>');
 				var panoramaOptions = {
 					position: nearStreetViewLocation,
 					pov: {
@@ -60,7 +101,7 @@ function populateInfoWindow(marker, infowindow) {
 		// Use streetview service to get the closest streetview image within
 		// 50 meters of the markers position
 		streetViewService.getPanoramaByLocation(marker.position, radius, getStreetView);
-		// Open the infowindow on the correct marker.
+		// Open the infowindow on the correct marker.		
 		infowindow.open(map, marker);
 	}
 }
@@ -72,10 +113,13 @@ function initMap() {
 		zoom: 13
 	});
 
+	largeInfowindow = new google.maps.InfoWindow();
+
     // Adding markers from locations.js file to the markers array
     for (var i = 0; i < locations.length; i++) {
         markers.push(new Neighborhood(locations[i]));
     }
+    ko.applyBindings(new ViewModel());
 }
 
 function showMapsLoadingError() {
