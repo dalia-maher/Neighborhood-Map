@@ -2,51 +2,67 @@
 
 var locations = [
     {
-        title: 'Park Ave Penthouse',
-		info: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+        title: "Children's Museum of the Arts",
+		info: 'Hands-on arts experiences for kids & families, including classes, performances & exhibits.',
         location: {
-            lat: 40.7713024,
-            lng: -73.9632393
+            lat: 40.7276165,
+            lng: -74.0081549
         }
     },
     {
-        title: 'Chelsea Loft',
-		info: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+        title: 'Columbus Park',
+		info: "Historic neighborhood spot, among the city's oldest, with playground, basketball courts & washrooms.",
         location: {
-            lat: 40.7444883,
-            lng: -73.9949465
+            lat: 40.724432,
+            lng: -73.977996
         }
     },
     {
-        title: 'Union Square Open Floor Plan',
-		info: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+        title: 'Empire State Building',
+		info: 'Iconic, art deco office tower from 1931 with exhibits & observatories on the 86th & 102nd floors.',
         location: {
-            lat: 40.7347062,
-            lng: -73.9895759
+            lat: 40.7484396,
+            lng: -73.9856619
         }
     },
     {
-        title: 'East Village Hip Studio',
-		info: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+        title: 'Flatiron Building',
+		info: "Architect Daniel Burnham's iconic 1902 triangular tower nicknamed for its clothes iron look.",
         location: {
-            lat: 40.7281777,
-            lng: -73.984377
+            lat: 40.741059,
+            lng: -73.9897013
         }
     },
     {
-        title: 'TriBeCa Artsy Bachelor Pad',
-		info: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+        title: 'Tenement Museum',
+		info: '1863 preserved tenement building brings Lower East Side immigrant stories to life with guided tours.',
         location: {
-            lat: 40.7195264,
-            lng: -74.0089934
+            lat: 40.7187943,
+            lng: -73.9900714
         }
     },
     {
-        title: 'Chinatown Homey Space',
-		info: 'Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua.',
+        title: 'Times Square',
+		info: 'Bustling destination in the heart of the Theater District known for bright lights, shopping & shows.',
         location: {
-            lat: 40.7180628,
-            lng: -73.9961237
+            lat: 40.758895,
+            lng: -73.985131
+        }
+    },
+    {
+        title: 'Williamsburg Bridge',
+		info: 'Historic suspension bridge connecting Manhattan & Brooklyn for cars, a subway, bikers & pedestrians.',
+        location: {
+            lat: 40.7135741,
+            lng: -73.9724034
+        }
+    },
+    {
+        title: 'Washington Square Park',
+		info: 'Historic Greenwich Village concrete-&-green park known for its stately arch & prime people-watching.',
+        location: {
+            lat: 40.7308228,
+            lng: -73.997332
         }
     }
 ];
