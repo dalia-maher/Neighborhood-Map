@@ -112,6 +112,7 @@ function populateInfoWindow(marker, infowindow) {
 
 function getWikiArticles(marker, infowindow) {
 
+	// setting up wikipedia url for API
 	var wikipediaUrl = "http://en.wikipedia.org/w/api.php?action=opensearch&search="
 		+ marker.title + "&format=json&callback=wikiCallback";
 	$.ajax({
