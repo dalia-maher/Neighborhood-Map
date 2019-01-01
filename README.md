@@ -1,14 +1,14 @@
 # Neighborhood Map
 
-This webiste aims to display a neighborhood location list on a map. A list of markers are displayed and by clicking on any of the markers, an info window is displayed showing information about this location. This project was done as a part of the Full Stack Web Developer Nanodegree on [Udacity](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004)
+This webiste aims to display a neighborhood location list on a map. A list of markers are displayed and by clicking on any of the markers, an info window is displayed showing information about this location and related Wikipedia articles to this location. This project was done as a part of the Full Stack Web Developer Nanodegree on [Udacity](https://www.udacity.com/course/full-stack-web-developer-nanodegree--nd004)
 
 ### Technologies used in this project
 
-1. Knockout Framework
+1. Knockout JS Framework
 2. Google Maps API
 3. HTML
 4. JQuery
-5. Third-Party API
+5. Wikipedia API as a Third-Party API
 
 ### Project Setup
 
