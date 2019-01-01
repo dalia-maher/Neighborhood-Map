@@ -1,0 +1,55 @@
+html,
+body {
+	font-family: Arial, sans-serif;
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+h1 {
+	color: #525454;
+	font-size: 22px;
+	text-align: center;
+}
+
+#map {
+	bottom:0px;
+	height: 100vh;
+	right: 0px;
+}
+
+#marker-title {
+	font-weight: bold;
+}
+
+#infobox {
+	width: 250px;
+}
+
+#pano {
+	height: 250px;
+}
+
+#articles {
+	width: 250px;
+}
+
+.text {
+	font-size: 12px;
+}
+
+@media (min-width: 1px, max-width: 699px) {
+    body {
+        padding: 0 0 0 20%;
+    }
+    .navmenu {
+        padding-top: 0;
+        width: 20%;
+    }
+    #neighborhood-list {
+        display: none !important;
+    }
+    .navbar-toggle {
+        display: block !important;
+    }
+}
