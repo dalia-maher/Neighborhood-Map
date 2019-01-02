@@ -14,7 +14,7 @@ function ViewModel() {
         var result = [];
         markers.forEach(function(marker) {
             if (marker.title.toLowerCase()
-				.includes(self.searchText().toLowerCase())) {
+                .includes(self.searchText().toLowerCase())) {
                 result.push(marker);
                 marker.setVisible(true);
             } else {
@@ -49,7 +49,7 @@ var Neighborhood = function(data) {
 		populateInfoWindow(this, largeInfowindow);
 	});
 
-    this.showLocationInfo = function() {
+    this.viewLocationInfo = function() {
         google.maps.event.trigger(this.marker, 'click');
     };
 };
@@ -81,9 +81,9 @@ function populateInfoWindow(marker, infowindow) {
 				var nearStreetViewLocation = data.location.latLng;
 				var heading = google.maps.geometry.spherical.computeHeading(
 					nearStreetViewLocation, marker.position);
-				infowindow.setContent('<div id="marker-title"><h4>' + marker.title
-					+ '</h4></div><div id="infobox"><p>' + marker.info
-					+ '</p></div><div id="pano"></div><div id="articles"></div>');
+				infowindow.setContent('<div id="marker-title"><h4>' + marker.title +
+					'</h4></div><div id="infobox"><p>' + marker.info +
+					'</p></div><div id="pano"></div><div id="articles"></div>');
 				var panoramaOptions = {
 					position: nearStreetViewLocation,
 					pov: {
@@ -113,10 +113,10 @@ function populateInfoWindow(marker, infowindow) {
 function getWikiArticles(marker, infowindow) {
 
 	// setting up wikipedia url for API
-	var wikipediaUrl = "http://en.wikipedia.org/w/api.php?action=opensearch&search="
-		+ marker.title + "&format=json&callback=wikiCallback";
+	var wikipediaUrl = "http://en.wikipedia.org/w/api.php?action=opensearch&search=" +
+		marker.title + "&format=json&callback=wikiCallback";
 	$.ajax({
-		url: wikiUrl,
+		url: wikipediaUrl,
 		dataType: "jsonp"
 	}).done(function(response) {
 		console.log(response);
@@ -142,7 +142,10 @@ function getWikiArticles(marker, infowindow) {
 function initMap() {
 	// Constructor creates a new map - only center and zoom are required.
 	map = new google.maps.Map(document.getElementById('map'), {
-		center: {lat: 40.7413549, lng: -73.9980244},
+		center: {
+			lat: 40.7413549,
+			lng: -73.9980244
+		},
 		zoom: 13
 	});
 

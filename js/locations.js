@@ -1,4 +1,4 @@
-// These are the real estate listings that will be shown to the user.
+// These are the neigborhood location listings that will be shown to the user.
 
 var locations = [
     {
