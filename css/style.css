@@ -38,18 +38,14 @@ h1 {
 	font-size: 12px;
 }
 
-@media (min-width: 1px, max-width: 699px) {
-    body {
-        padding: 0 0 0 20%;
+@media (min-width: 1px, max-width: 991px) {
+    .navbar {
+        display: block;
     }
-    .navmenu {
-        padding-top: 0;
-        width: 20%;
-    }
-    #neighborhood-list {
-        display: none !important;
-    }
-    .navbar-toggle {
-        display: block !important;
+}
+
+@media (min-width: 992px) {
+    .navbar {
+        display: none;
     }
 }
